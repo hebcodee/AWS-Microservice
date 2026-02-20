@@ -1,6 +1,7 @@
 package com.myorg;
 
 import software.amazon.awscdk.App;
+import software.amazon.awscdk.services.ec2.Vpc;
 
 public class AwsInfraApp {
     public static void main(final String[] args) {
@@ -17,6 +18,9 @@ public class AwsInfraApp {
         AwsServicesStack serviceStack = new AwsServicesStack(app, "Service", clusterStack.getCluster());
         serviceStack.addDependency(clusterStack);
 
+        //Rds - Relational Database Service
+        AwsRdsStack rdsStack = new AwsRdsStack(app, "RdsMysql", vpcStack.getVpc());
+        rdsStack.addDependency(vpcStack);
 
         app.synth();
     }
