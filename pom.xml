@@ -30,7 +30,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>com.myorg.AwsMicrosservicesApp</mainClass>
+                    <mainClass>com.myorg.AwsInfraApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>
