@@ -6,6 +6,9 @@ public class AwsInfraApp {
     public static void main(final String[] args) {
         App app = new App();
 
+        //Vpc
+        AwsVpcStack vpcStack = new AwsVpcStack(app, "Vpc");
+
 
 
         app.synth();
