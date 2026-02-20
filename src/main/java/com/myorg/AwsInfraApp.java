@@ -9,7 +9,9 @@ public class AwsInfraApp {
         //Vpc
         AwsVpcStack vpcStack = new AwsVpcStack(app, "Vpc");
 
-
+        //Cluster
+        new AwsClusterStack(app, "Cluster", vpcStack.getVpc())
+                .addDependency(vpcStack);
 
         app.synth();
     }
