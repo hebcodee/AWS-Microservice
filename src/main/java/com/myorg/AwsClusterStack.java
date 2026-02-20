@@ -8,6 +8,7 @@ import software.constructs.Construct;
 
 
 public class AwsClusterStack extends Stack {
+    Cluster cluster;
     public AwsClusterStack(final Construct scope, final String id, final Vpc vpc) {
         this(scope, id, null, vpc);
     }
@@ -15,9 +16,13 @@ public class AwsClusterStack extends Stack {
     public AwsClusterStack(final Construct scope, final String id, final StackProps props, final Vpc vpc) {
         super(scope, id, props);
 
-        Cluster cluster = Cluster.Builder.create(this, "AwsCluster")
+        cluster = Cluster.Builder.create(this, "AwsCluster")
                 .clusterName("aws-cluster")
                 .vpc(vpc)
                 .build();
+    }
+
+    public Cluster getCluster() {
+        return cluster;
     }
 }
