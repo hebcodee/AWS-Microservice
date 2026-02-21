@@ -26,7 +26,7 @@ public class AwsServicesStack extends Stack {
         authentication.put("SPRING_DATASOURCE_PASSWORD", Fn.importValue("pedidos-db-senha"));
 
 
-        ApplicationLoadBalancedFargateService awsService = ApplicationLoadBalancedFargateService.Builder.create(this, "AwsService")
+        ApplicationLoadBalancedFargateService awsService =ApplicationLoadBalancedFargateService.Builder.create(this, "AwsService")
                 .serviceName("aws-service")
                 .cluster(cluster)           // Required
                 .cpu(256)                   // Default is 256

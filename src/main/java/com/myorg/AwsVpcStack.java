@@ -19,7 +19,7 @@ public class AwsVpcStack extends Stack {
         super(scope, id, props);
 
         vpc = Vpc.Builder.create(this, "AwsVpc")
-                .maxAzs(1)  // Default is all AZs in region
+                .maxAzs(2)  // Default is all AZs in region
                 .build();
 
     }
